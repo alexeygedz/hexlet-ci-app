@@ -1,0 +1,13 @@
+name: ci
+
+on: push
+
+jobs:
+  buld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make setup
+      - run: make lint
+      - run: make test
+  
